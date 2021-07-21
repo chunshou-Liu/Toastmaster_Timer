@@ -1,0 +1,29 @@
+@charset "UTF-8";
+        /* CSS Document*/
+#countdown {
+    font-size: 280pt;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    font-family: AppleSystemUIFont;
+}
+
+#stopWatch {
+    font-size: 280pt;
+    font-style: normal;
+    color: black;
+    text-align: center;
+    font-family: AppleSystemUIFont;
+}
+
+/* a wrapper for the paginatior */
+.btn-group-wrap {
+    text-align: center;
+}
+
+div.btn-group {
+    margin: 0 auto;
+    text-align: center;
+    width: inherit;
+    display: inline-block;
+}

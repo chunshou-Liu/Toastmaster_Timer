@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/newTicket2.0.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/countdown_timer.js"></script>
+</head>
+
+<body onload="cdreset()">
+        <div class="row justify-content-center">
+            <span id="countdown" class="timer" ></span>
+        </div>
+        <div class="row justify-content-center">
+            <div class="btn-group btn-default">
+                <input type="button" class="btn btn-default" value="Start" onclick="countdown()">
+                <input type="button" class="btn btn-default" value="Stop" onclick="cdpause()">
+                <input type="button" class="btn btn-default" value="Reset" onclick="cdreset(seconds = 420)">
+            </div>
+        </div>
+
+</body>
+
+</html>

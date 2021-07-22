@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Timer</title>
-    <link rel="stylesheet" type="text/css" href="css/newTicket2.0.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
@@ -12,11 +12,19 @@
         <span id="stopWatch" class="timer text-xl" >0:00</span>
       </div>
       <div class="row justify-content-center">
-        <div class="btn-group btn-group-wrap justify-content-center">
-            <input type="button" class="btn btn-default justify-content-center active" value="Table topic(1-2)" id="TableButton" onclick="setTabletimer()">
-            <input type="button" class="btn btn-default justify-content-center" value="Individual Evaluator(2-3)" id="CommmentButton" onclick="setIndividualtimer()">
-            <input type="button" class="btn btn-default justify-content-center" value="Ice breaker(4-6)" id="IceButton4" onclick="setIcetimer()">
-            <input type="button" class="btn btn-default justify-content-center" value="Prepared Speech(5-7)" id="PreparedButton" onclick="setPreparedtimer()">
+        <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons" role="group">
+            <label class="btn btn-outline-secondary justify-content-center ">
+                <input checked type="radio" name="options" id="TableButton" onclick="setTabletimer()" value="Table topic(1-2)"> Table topic(1-2)
+            </label>
+            <label class="btn btn-outline-secondary option justify-content-center ">
+                <input type="radio" name="options" id="CommmentButton" onclick="setIndividualtimer()" value="Individual Evaluator(2-3)"> Individual Evaluator(2-3)
+            </label>
+            <label class="btn btn-outline-secondary option justify-content-center ">
+                <input type="radio" name="options" id="IceButton" onclick="setIcetimer()" value="Ice breaker(4-6)"> Ice breaker(4-6)
+            </label>
+            <label class="btn btn-outline-secondary option justify-content-center ">
+                <input type="radio" name="options" id="PreparedButton" onclick="setPreparedtimer()" value="Prepared Speech(5-7)"> Prepared Speech(5-7)
+            </label>
           </div>
 
           <div class="btn-group justify-content-center">

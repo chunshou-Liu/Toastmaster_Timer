@@ -27,3 +27,13 @@ div.btn-group {
     width: inherit;
     display: inline-block;
 }
+
+.option{
+    color: #000000;
+    background: #EFEFEF;
+}
+
+.option:hover, .active {
+    color: #000000;
+    background: #f5c2c7;
+}

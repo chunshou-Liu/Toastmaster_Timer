@@ -33,7 +33,12 @@ div.btn-group {
     background: #EFEFEF;
 }
 
-.option:hover, .active {
-    color: #000000;
-    background: #f5c2c7;
+.option:hover, active{
+    color: #ffffff !important;
+    background: #6E757C !important;
+}
+
+.btn-outline-secondary:active, hover, focus{
+    color: #6E757C;
+    background: #ffffff !important;
 }

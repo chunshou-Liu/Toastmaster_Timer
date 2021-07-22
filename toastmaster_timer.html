@@ -3,99 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Timer</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/timer.js"></script>
 </head>
-<body>
-      <div class="row justify-content-center">
-        <span id="stopWatch" class="timer text-xl" >0:00</span>
-      </div>
-      <div class="row justify-content-center">
-        <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons" role="group">
-            <label class="btn btn-outline-secondary justify-content-center ">
-                <input checked type="radio" name="options" id="TableButton" onclick="setTabletimer()" value="Table topic(1-2)"> Table topic(1-2)
-            </label>
-            <label class="btn btn-outline-secondary option justify-content-center ">
-                <input type="radio" name="options" id="CommmentButton" onclick="setIndividualtimer()" value="Individual Evaluator(2-3)"> Individual Evaluator(2-3)
-            </label>
-            <label class="btn btn-outline-secondary option justify-content-center ">
-                <input type="radio" name="options" id="IceButton" onclick="setIcetimer()" value="Ice breaker(4-6)"> Ice breaker(4-6)
-            </label>
-            <label class="btn btn-outline-secondary option justify-content-center ">
-                <input type="radio" name="options" id="PreparedButton" onclick="setPreparedtimer()" value="Prepared Speech(5-7)"> Prepared Speech(5-7)
-            </label>
-          </div>
+<body onload="reset()">
+<!-- Timer -->
+<div class="row justify-content-center">
+    <span class="timer text-xl" id="stopWatch">0:00</span>
+</div>
 
-          <div class="btn-group justify-content-center">
-            <input type="button" class="btn btn-default justify-content-center" value="Start" id="startButton">
-            <input type="button" class="btn btn-default justify-content-center" value="Stop" id="stopButton">
-            <input type="button" class="btn btn-default justify-content-center" value="Reset" id="resetButton">
-          </div>
-        </div>
-
-      <script>
-        var t;
-        var seconds = 1;
-        var gtime =  5 * 60;
-        var ytime =  6 * 60;
-        var rtime =  7.5 * 60;
-        function setTabletimer(){
-            gtime =  1 * 60;
-            ytime =  1.5 * 60;
-            rtime =  2.5 * 60;
-        }
-        function setIndividualtimer(){
-            gtime =  2 * 60;
-            ytime =  2.5 * 60;
-            rtime =  3.5 * 60;
-        }
-        function setIcetimer(){
-            gtime =  4 * 60;
-            ytime =  5 * 60;
-            rtime =  6.5 * 60;
-        }
-        function setPreparedtimer(){
-            gtime =  5 * 60;
-            ytime =  6 * 60;
-            rtime =  7.5 * 60;
-        }
-        function changeColor() {
-            if (seconds <= ytime && seconds >= gtime) {
-            document.body.style.background = "green";
-            }
-            else if (seconds <= rtime && seconds >= ytime) {
-            document.body.style.background = "yellow";
-            }
-            else if (seconds >= rtime){
-                document.body.style.background = "red";
-            }
-            else{
-                document.body.style.background = "white";
-            }
-        }
-        function secondPassed() {
-              var minutes = Math.round((seconds - 30) / 60);
-              if (seconds %60 <10){$("#stopWatch").html(minutes +":0" + seconds %60 );}
-              else{$("#stopWatch").html(minutes +":" + seconds %60 );}
-        }
-        function timer(){
-          secondPassed();
-          changeColor();
-              seconds++;
-              t = setTimeout("timer()", 1000);
-        }
-      $("#startButton").click(function (e) {timer()});
-      $("#resetButton").click(function (e) {
-          seconds = 0;
-          changeColor();
-          clearTimeout(t);
-          secondPassed();
-      });
-      $("#stopButton").click(function (e) {
-          clearTimeout(t);
-      });
-      </script>
-
+<div class="row justify-content-center">
+    <!--Time range button-->
+    <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons" role="group">
+        <label class="btn btn-outline-secondary justify-content-center ">
+            <input checked id="TableButton" name="options" onclick="setTabletimer()" type="radio"
+                   value="Table topic(1-2)"> Table topic(1-2)
+        </label>
+        <label class="btn btn-outline-secondary option justify-content-center ">
+            <input id="CommmentButton" name="options" onclick="setIndividualtimer()" type="radio"
+                   value="Individual Evaluator(2-3)"> Individual Evaluator(2-3)
+        </label>
+        <label class="btn btn-outline-secondary option justify-content-center ">
+            <input id="IceButton" name="options" onclick="setIcetimer()" type="radio" value="Ice breaker(4-6)"> Ice
+            breaker(4-6)
+        </label>
+        <label class="btn btn-outline-secondary option justify-content-center option">
+            <input id="PreparedButton" name="options" onclick="setPreparedtimer()" type="radio"
+                   value="Prepared Speech(5-7)"> Prepared Speech(5-7)
+        </label>
+    </div>
+    <!--Timer operation button-->
+    <div class="btn-group justify-content-center">
+        <input class="btn btn-default justify-content-center" id="startButton" onclick="timer()" type="button"
+               value="Start">
+        <input class="btn btn-default justify-content-center" id="stopButton" onclick="stop()" type="button"
+               value="Stop">
+        <input class="btn btn-default justify-content-center" id="resetButton" onclick="reset()" type="button"
+               value="Reset">
+    </div>
+</div>
 </body>
 </html>

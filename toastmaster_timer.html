@@ -14,36 +14,36 @@
 <div class="row justify-content-center">
     <span class="timer text-xl" id="stopWatch">0:00</span>
 </div>
-
 <div class="row justify-content-center">
     <!--Time range button-->
-    <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons" role="group">
-        <label class="btn btn-outline-secondary justify-content-center ">
-            <input checked id="TableButton" name="options" onclick="setTabletimer()" type="radio"
+    <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons" id="type" role="group">
+        <label class="btn btn-outline-secondary justify-content-center">
+            <input checked id="TableButton" name="timer_type" onclick="set_timer()" type="radio"
                    value="Table topic(1-2)"> Table topic(1-2)
         </label>
-        <label class="btn btn-outline-secondary option justify-content-center ">
-            <input id="CommmentButton" name="options" onclick="setIndividualtimer()" type="radio"
+        <label class="btn btn-outline-secondary justify-content-center">
+            <input id="Individual" name="timer_type" onclick="set_timer()" type="radio"
                    value="Individual Evaluator(2-3)"> Individual Evaluator(2-3)
         </label>
-        <label class="btn btn-outline-secondary option justify-content-center ">
-            <input id="IceButton" name="options" onclick="setIcetimer()" type="radio" value="Ice breaker(4-6)"> Ice
+        <label class="btn btn-outline-secondary justify-content-center">
+            <input id="IceButton" name="timer_type" onclick="set_timer()" type="radio" value="Ice breaker(4-6)"> Ice
             breaker(4-6)
         </label>
-        <label class="btn btn-outline-secondary option justify-content-center option">
-            <input id="PreparedButton" name="options" onclick="setPreparedtimer()" type="radio"
+        <label class="btn btn-outline-secondary justify-content-center">
+            <input id="PreparedButton" name="timer_type" onclick="set_timer()" type="radio"
                    value="Prepared Speech(5-7)"> Prepared Speech(5-7)
         </label>
     </div>
     <!--Timer operation button-->
     <div class="btn-group justify-content-center">
-        <input class="btn btn-default justify-content-center" id="startButton" onclick="timer()" type="button"
-               value="Start">
+        <input class="btn btn-default justify-content-center" id="startButton" onclick="timer(); this.disabled = true;"
+               type="button" value="Start">
         <input class="btn btn-default justify-content-center" id="stopButton" onclick="stop()" type="button"
                value="Stop">
         <input class="btn btn-default justify-content-center" id="resetButton" onclick="reset()" type="button"
                value="Reset">
     </div>
 </div>
+
 </body>
 </html>

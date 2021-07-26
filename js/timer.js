@@ -1,11 +1,11 @@
-var t;
-var seconds = 1;
-var gtime = 5 * 60;
-var ytime = 6 * 60;
-var rtime = 7.5 * 60;
+let t;
+let seconds = 1;
+let gtime = 5 * 60;
+let ytime = 6 * 60;
+let rtime = 7.5 * 60;
 
 function set_timer() {
-    var selectedOption = $("input:radio[name=timer_type]:checked").val();
+    let selectedOption = $("input:radio[name=timer_type]:checked").val();
     switch (selectedOption) {
         case 'Table topic(1-2)':
             gtime = 1 * 60;
@@ -30,7 +30,6 @@ function set_timer() {
         default:
 
     }
-
 }
 
 function changeColor() {
@@ -46,7 +45,7 @@ function changeColor() {
 }
 
 function secondPassed() {
-    var minutes = Math.round((seconds - 30) / 60);
+    let minutes = Math.round((seconds - 30) / 60);
     if (seconds % 60 < 10) {
         $("#stopWatch").html(minutes + ":0" + seconds % 60);
     } else {

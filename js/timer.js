@@ -2,7 +2,7 @@ let t;
 let seconds = 1;
 let gtime = 5 * 60;
 let ytime = 6 * 60;
-let rtime = 7.5 * 60;
+let rtime = 7 * 60;
 
 function set_timer() {
     let selectedOption = $("input:radio[name=timer_type]:checked").val();
@@ -10,22 +10,22 @@ function set_timer() {
         case 'Table topic(1-2)':
             gtime = 1 * 60;
             ytime = 1.5 * 60;
-            rtime = 2.5 * 60;
+            rtime = 2 * 60;
             break;
         case 'Individual Evaluator(2-3)':
             gtime = 2 * 60;
             ytime = 2.5 * 60;
-            rtime = 3.5 * 60;
+            rtime = 3 * 60;
             break;
         case 'Ice breaker(4-6)':
             gtime = 4 * 60;
             ytime = 5 * 60;
-            rtime = 6.5 * 60;
+            rtime = 6 * 60;
             break;
         case 'Prepared Speech(5-7)':
             gtime = 5 * 60;
             ytime = 6 * 60;
-            rtime = 7.5 * 60;
+            rtime = 7 * 60;
             break;
         default:
 
